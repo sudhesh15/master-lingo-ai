@@ -6,6 +6,18 @@ import { Mic, MicOff, Volume2, Globe, Languages, BookOpen, Users, Star, Play, Pa
 import { RealtimeSession } from '@openai/agents-realtime';
 import { languageAgent } from '../agents/languageAgent';
 
+type RealtimeSessionWithEvents = RealtimeSession & {
+  on(event: string, callback: (data: unknown) => void): void;
+  disconnect?: () => Promise<void>;
+  end?: () => Promise<void>;
+};
+
+interface ConversationItem {
+  type: string;
+  role: string;
+  content?: Array<{ text?: string }>;
+}
+
 export default function LanguageLearningApp() {
   const { user } = useUser();
   const [isConnected, setIsConnected] = useState(false);
@@ -17,7 +29,7 @@ export default function LanguageLearningApp() {
   const [currentPhrase, setCurrentPhrase] = useState('');
   const [sessionTime, setSessionTime] = useState(0);
   const [remainingTime, setRemainingTime] = useState(180); // 3 minutes = 180 seconds
-  const sessionRef = useRef<RealtimeSession | null>(null);
+  const sessionRef = useRef<RealtimeSessionWithEvents | null>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const sessionTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -110,24 +122,24 @@ export default function LanguageLearningApp() {
             model: 'gpt-4o-mini-transcribe'
           }
         }
-      });
+      }) as unknown as RealtimeSessionWithEvents;
 
       // Add event listeners for the session
-      const runtimeSession: any = session as unknown as any;
-      runtimeSession.on('conversation.item.created', (item: any) => {
-        if (item.type === 'message' && item.role === 'assistant') {
-          const content = item.content?.[0]?.text || '';
+      session.on('conversation.item.created', (item: unknown) => {
+        const conversationItem = item as ConversationItem;
+        if (conversationItem.type === 'message' && conversationItem.role === 'assistant') {
+          const content = conversationItem.content?.[0]?.text || '';
           if (content.includes('Practice:') || content.includes('Repeat:')) {
             setCurrentPhrase(content.replace(/^(Practice:|Repeat:)\s*/, ''));
           }
         }
       });
 
-      runtimeSession.on('input_audio_buffer.speech_started', () => {
+      session.on('input_audio_buffer.speech_started', () => {
         setIsListening(true);
       });
 
-      runtimeSession.on('input_audio_buffer.speech_stopped', () => {
+      session.on('input_audio_buffer.speech_stopped', () => {
         setIsListening(false);
       });
 
@@ -183,13 +195,12 @@ export default function LanguageLearningApp() {
   async function handleStopLearning() {
     try {
       if (sessionRef.current) {
-        const anySession = sessionRef.current as any;
-        if (typeof anySession.disconnect === 'function') {
-          await anySession.disconnect();
-        } else if (typeof anySession.close === 'function') {
-          await anySession.close();
-        } else if (typeof anySession.end === 'function') {
-          await anySession.end();
+        if (sessionRef.current.disconnect) {
+          await sessionRef.current.disconnect();
+        } else if (sessionRef.current.close) {
+          await sessionRef.current.close();
+        } else if (sessionRef.current.end) {
+          await sessionRef.current.end();
         }
         sessionRef.current = null;
       }
