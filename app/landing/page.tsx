@@ -1,6 +1,6 @@
 // app/landing/page.tsx
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
-import { Globe, Languages, Headphones, TrendingUp, Award, Mic, Zap, Clock } from "lucide-react";
+import { Languages, Headphones, TrendingUp, Award, Mic, Zap, Clock } from "lucide-react";
 
 export default function LandingPage() {
   return (
@@ -162,7 +162,7 @@ export default function LandingPage() {
                 Simple, Transparent Pricing
               </h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Start with our free beta and upgrade when you're ready for unlimited learning
+                Start with our free beta and upgrade when you&apos;re ready for unlimited learning
               </p>
             </div>
 
