@@ -152,13 +152,13 @@ export default function LanguageLearningApp() {
         content: [{
           type: 'input_text',
           text: `SYSTEM INSTRUCTION:
-            USER_NATIVE=${nativeLanguages.find(l => l.code === currentLanguage)?.name || currentLanguage}
-            TARGET=${languages.find(l => l.code === targetLanguage)?.name || targetLanguage}
+        USER_NATIVE=${nativeLanguages.find(l => l.code === currentLanguage)?.name || currentLanguage}
+        TARGET=${languages.find(l => l.code === targetLanguage)?.name || targetLanguage}
 
-            Reinforce these rules strictly at runtime:
-            - Always speak in USER_NATIVE for explanations, feedback, and conversation.
-            - Only produce TARGET words when giving a 'Practice:' phrase (exact phrase only), immediately followed by 'That means: [native translation]'.
-            - If the user replies in TARGET, treat it as practice: reply in USER_NATIVE with feedback and the next Practice phrase. Do NOT switch the conversation to TARGET unless the user explicitly says 'Switch to TARGET for conversation'.`
+        Reinforce these rules strictly at runtime:
+        - Always speak in USER_NATIVE for explanations, feedback, and conversation.
+        - Only produce TARGET words when giving a 'Repeat after me:' phrase (exact phrase only), immediately followed by 'That means: [native translation]'.
+        - If the user replies in TARGET, treat it as practice: reply in USER_NATIVE with feedback and the next 'Repeat after me:' phrase with its meaning. Do NOT switch the conversation to TARGET unless the user explicitly says 'Switch to TARGET for conversation'.`
         }]
       });
       
