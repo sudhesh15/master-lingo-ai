@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { SignOutButton, useUser } from "@clerk/nextjs";
-import { Mic, MicOff, Volume2, Globe, Languages, BookOpen, Users, Star, Play, Pause, RotateCcw, StopCircle, Settings, Award, TrendingUp, Clock, Headphones, LogOut, AlertTriangle } from 'lucide-react';
+import { Mic, MicOff, Volume2, Globe, Languages, BookOpen, Users, Star, Play, Pause, StopCircle, Award, TrendingUp, Clock, Headphones, LogOut, AlertTriangle } from 'lucide-react';
 import { RealtimeSession } from '@openai/agents-realtime';
 import { languageAgent } from '../agents/languageAgent';
 
