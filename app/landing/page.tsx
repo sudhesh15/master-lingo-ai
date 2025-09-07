@@ -186,7 +186,7 @@ export default function LandingPage() {
                 </div>
                 <Quote className="w-8 h-8 text-emerald-400 mb-4 opacity-60" />
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  "The AI conversations feel so natural! I&apos;ve improved my Spanish pronunciation more in 2 weeks than I did in months with traditional apps."
+                  &quot;The AI conversations feel so natural! I&apos;ve improved my Spanish pronunciation more in 2 weeks than I did in months with traditional apps.&quot;
                 </p>
                 <span className="text-emerald-400 text-sm font-semibold">Learning Spanish</span>
               </div>
