@@ -241,20 +241,20 @@ export default function LanguageLearningApp() {
     };
   }, []);
 
-  // Setup Phase - Dark Theme
+  // Setup Phase - Green Theme
   if (sessionState === 'setup') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-purple-900">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-emerald-900">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-500 to-violet-600 rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-purple-600 to-indigo-700 rounded-full opacity-20 animate-pulse animation-delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-purple-400 to-violet-500 rounded-full opacity-10 animate-spin animation-duration-20000"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-green-600 to-teal-700 rounded-full opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full opacity-10 animate-spin" style={{animationDuration: '20s'}}></div>
           
           {/* Floating particles */}
-          <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-purple-400 rounded-full opacity-30 animate-bounce animation-delay-500"></div>
-          <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-violet-400 rounded-full opacity-40 animate-bounce animation-delay-1000"></div>
-          <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-purple-300 rounded-full opacity-50 animate-pulse"></div>
+          <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-emerald-400 rounded-full opacity-30 animate-bounce" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-green-400 rounded-full opacity-40 animate-bounce" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-emerald-300 rounded-full opacity-50 animate-pulse"></div>
         </div>
 
         {/* Header with User Info */}
@@ -262,10 +262,10 @@ export default function LanguageLearningApp() {
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-r from-emerald-600 to-green-600 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30">
                   <Languages className="w-6 h-6 text-white" />
                 </div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
                   MasterLingo.ai
                 </h1>
               </div>
@@ -300,10 +300,10 @@ export default function LanguageLearningApp() {
 
             {/* Header */}
             <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full mb-6 shadow-lg shadow-purple-500/30">
-                <Languages className="w-12 h-12 text-white" style={{ animationDuration: '8s' }} />
-            </div>
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4">
+              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-emerald-600 to-green-600 rounded-full mb-6 shadow-lg shadow-emerald-500/30">
+                <Languages className="w-12 h-12 text-white" />
+              </div>
+              <h1 className="text-5xl font-bold bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent mb-4">
                 Start Your Learning Journey
               </h1>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
@@ -316,7 +316,7 @@ export default function LanguageLearningApp() {
               {/* Native Language */}
               <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-white flex items-center gap-2">
-                  <Users className="w-6 h-6 text-purple-400" />
+                  <Users className="w-6 h-6 text-emerald-400" />
                   Your Native Language
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
@@ -324,16 +324,16 @@ export default function LanguageLearningApp() {
                     <button
                       key={lang.code}
                       onClick={() => setCurrentLanguage(lang.code)}
-                      className={`group relative p-4 rounded-xl border-2 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 ${
+                      className={`group relative p-4 rounded-xl border-2 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-105 ${
                         currentLanguage === lang.code
-                          ? 'border-purple-500 bg-purple-900/50 shadow-lg shadow-purple-500/30 scale-105'
-                          : 'border-gray-600 hover:border-purple-400 bg-gray-800/50'
+                          ? 'border-emerald-500 bg-emerald-900/50 shadow-lg shadow-emerald-500/30 scale-105'
+                          : 'border-gray-600 hover:border-emerald-400 bg-gray-800/50'
                       }`}
                     >
                       <div className="text-3xl mb-2 text-gray-200 group-hover:animate-bounce">{lang.flag}</div>
                       <div className="text-sm font-semibold text-gray-200">{lang.name}</div>
                       {currentLanguage === lang.code && (
-                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center shadow-lg">
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center shadow-lg">
                           <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                         </div>
                       )}
@@ -345,7 +345,7 @@ export default function LanguageLearningApp() {
               {/* Target Language */}
               <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-white flex items-center gap-2">
-                  <BookOpen className="w-6 h-6 text-violet-400" />
+                  <BookOpen className="w-6 h-6 text-green-400" />
                   Language to Learn
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
@@ -353,16 +353,16 @@ export default function LanguageLearningApp() {
                     <button
                       key={lang.code}
                       onClick={() => setTargetLanguage(lang.code)}
-                      className={`group relative p-4 rounded-xl border-2 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/20 hover:scale-105 ${
+                      className={`group relative p-4 rounded-xl border-2 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/20 hover:scale-105 ${
                         targetLanguage === lang.code
-                          ? 'border-violet-500 bg-violet-900/50 shadow-lg shadow-violet-500/30 scale-105'
-                          : 'border-gray-600 hover:border-violet-400 bg-gray-800/50'
+                          ? 'border-green-500 bg-green-900/50 shadow-lg shadow-green-500/30 scale-105'
+                          : 'border-gray-600 hover:border-green-400 bg-gray-800/50'
                       }`}
                     >
                       <div className="text-3xl mb-2 text-gray-200 group-hover:animate-bounce">{lang.flag}</div>
                       <div className="text-sm font-semibold text-gray-200">{lang.name}</div>
                       {targetLanguage === lang.code && (
-                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-violet-500 rounded-full flex items-center justify-center shadow-lg">
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
                           <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                         </div>
                       )}
@@ -377,9 +377,9 @@ export default function LanguageLearningApp() {
               <button
                 onClick={handleStartLearning}
                 disabled={!currentLanguage || !targetLanguage}
-                className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 disabled:from-gray-600 disabled:to-gray-700 text-white font-bold py-6 px-12 rounded-2xl transition-all duration-300 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed shadow-2xl shadow-purple-500/30 text-xl min-w-[300px]"
+                className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 disabled:from-gray-600 disabled:to-gray-700 text-white font-bold py-6 px-12 rounded-2xl transition-all duration-300 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed shadow-2xl shadow-emerald-500/30 text-xl min-w-[300px]"
               >
-                <div className="absolute inset-0 bg-gradient-to-r  rounded-2xl blur opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-2xl blur opacity-40 group-hover:opacity-60 transition-opacity"></div>
                 <div className="relative flex items-center gap-3">
                   <Play className="w-7 h-7" />
                   Begin Your Journey
@@ -391,22 +391,22 @@ export default function LanguageLearningApp() {
             {/* Features */}
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="p-4 bg-gray-800/30 rounded-2xl border border-gray-700/50">
-                <div className="w-12 h-12 bg-purple-900/50 rounded-full flex items-center justify-center mx-auto mb-3 border border-purple-500/30">
-                  <Headphones className="w-6 h-6 text-purple-400" />
+                <div className="w-12 h-12 bg-emerald-900/50 rounded-full flex items-center justify-center mx-auto mb-3 border border-emerald-500/30">
+                  <Headphones className="w-6 h-6 text-emerald-400" />
                 </div>
                 <h4 className="font-semibold text-white mb-1">Voice Conversations</h4>
                 <p className="text-sm text-gray-300">Natural speech practice with AI feedback</p>
               </div>
               <div className="p-4 bg-gray-800/30 rounded-2xl border border-gray-700/50">
-                <div className="w-12 h-12 bg-violet-900/50 rounded-full flex items-center justify-center mx-auto mb-3 border border-violet-500/30">
-                  <TrendingUp className="w-6 h-6 text-violet-400" />
+                <div className="w-12 h-12 bg-green-900/50 rounded-full flex items-center justify-center mx-auto mb-3 border border-green-500/30">
+                  <TrendingUp className="w-6 h-6 text-green-400" />
                 </div>
                 <h4 className="font-semibold text-white mb-1">Adaptive Learning</h4>
                 <p className="text-sm text-gray-300">Personalized lessons that adapt to your pace</p>
               </div>
               <div className="p-4 bg-gray-800/30 rounded-2xl border border-gray-700/50">
-                <div className="w-12 h-12 bg-indigo-900/50 rounded-full flex items-center justify-center mx-auto mb-3 border border-indigo-500/30">
-                  <Award className="w-6 h-6 text-indigo-400" />
+                <div className="w-12 h-12 bg-teal-900/50 rounded-full flex items-center justify-center mx-auto mb-3 border border-teal-500/30">
+                  <Award className="w-6 h-6 text-teal-400" />
                 </div>
                 <h4 className="font-semibold text-white mb-1">Progress Tracking</h4>
                 <p className="text-sm text-gray-300">Monitor your improvement in real-time</p>
@@ -418,14 +418,14 @@ export default function LanguageLearningApp() {
     );
   }
 
-  // Learning Phase - Enhanced Dark Theme with Timer
+  // Learning Phase - Enhanced Green Theme with Timer
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-purple-900">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-emerald-900">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-violet-500 rounded-full opacity-10 animate-pulse animation-delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-purple-500 to-violet-500 rounded-full opacity-5 animate-spin animation-duration-30000"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-emerald-500 rounded-full opacity-10 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-green-500 rounded-full opacity-10 animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-emerald-500 to-green-500 rounded-full opacity-5 animate-spin" style={{animationDuration: '30s'}}></div>
       </div>
 
       {/* Header */}
@@ -434,10 +434,10 @@ export default function LanguageLearningApp() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-r from-emerald-600 to-green-600 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30">
                   <Languages className="w-6 h-6 text-white" />
                 </div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
                   MasterLingo.ai
                 </h1>
               </div>
@@ -445,7 +445,7 @@ export default function LanguageLearningApp() {
                 <div className="flex items-center gap-2 px-3 py-1 bg-gray-800/60 rounded-full border border-gray-700/50">
                   <span className="text-gray-300">Learning:</span>
                   <span className="text-2xl">{languages.find(l => l.code === targetLanguage)?.flag}</span>
-                  <span className="font-semibold text-purple-400">{languages.find(l => l.code === targetLanguage)?.name}</span>
+                  <span className="font-semibold text-emerald-400">{languages.find(l => l.code === targetLanguage)?.name}</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-400">
                   <Clock className="w-4 h-4" />
@@ -460,7 +460,7 @@ export default function LanguageLearningApp() {
                   ? 'bg-red-900/60 border-red-500/50 text-red-300' 
                   : remainingTime <= 60 
                   ? 'bg-yellow-900/60 border-yellow-500/50 text-yellow-300'
-                  : 'bg-green-900/60 border-green-500/50 text-green-300'
+                  : 'bg-emerald-900/60 border-emerald-500/50 text-emerald-300'
               }`}>
                 <Clock className="w-4 h-4" />
                 <span className="font-mono font-bold">{formatTime(remainingTime)}</span>
@@ -485,11 +485,11 @@ export default function LanguageLearningApp() {
               <div className="mb-8">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-lg font-medium text-white">Session Progress</span>
-                  <span className="text-lg font-bold text-purple-400">{Math.round(progress)}%</span>
+                  <span className="text-lg font-bold text-emerald-400">{Math.round(progress)}%</span>
                 </div>
                 <div className="w-full bg-gray-800/60 rounded-full h-4 overflow-hidden border border-gray-700/50">
                   <div
-                    className="bg-gradient-to-r from-purple-500 to-violet-500 h-4 rounded-full transition-all duration-500 shadow-lg"
+                    className="bg-gradient-to-r from-emerald-500 to-green-500 h-4 rounded-full transition-all duration-500 shadow-lg"
                     style={{ width: `${progress}%` }}
                   >
                     <div className="h-full bg-white/30 animate-pulse"></div>
@@ -546,16 +546,16 @@ export default function LanguageLearningApp() {
 
               {/* Current Phrase */}
               {currentPhrase && (
-                <div className="bg-gradient-to-r from-purple-900/40 to-violet-900/40 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-purple-500/30">
+                <div className="bg-gradient-to-r from-emerald-900/40 to-green-900/40 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-emerald-500/30">
                   <div className="flex items-center gap-3 mb-3">
-                    <Volume2 className="w-6 h-6 text-purple-400" />
-                    <span className="text-lg font-semibold text-purple-300">Practice This Phrase:</span>
+                    <Volume2 className="w-6 h-6 text-emerald-400" />
+                    <span className="text-lg font-semibold text-emerald-300">Practice This Phrase:</span>
                   </div>
                   <p className="text-2xl font-bold text-white leading-relaxed">{currentPhrase}</p>
                   <div className="mt-4 flex items-center gap-2">
                     <div className="flex gap-1">
                       {[...Array(3)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{animationDelay: `${i * 0.2}s`}}></div>
+                        <div key={i} className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce" style={{animationDelay: `${i * 0.2}s`}}></div>
                       ))}
                     </div>
                     <span className="text-gray-300 text-sm ml-2">Repeat after me</span>
@@ -596,13 +596,13 @@ export default function LanguageLearningApp() {
             {/* Session Timer */}
             <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl border border-gray-700/50 p-6 shadow-xl">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Clock className="w-6 h-6 text-purple-400" />
+                <Clock className="w-6 h-6 text-emerald-400" />
                 Beta Session Timer
               </h3>
               <div className="text-center">
                 <div className={`text-4xl font-mono font-bold mb-2 ${
                   remainingTime <= 30 ? 'text-red-400' : 
-                  remainingTime <= 60 ? 'text-yellow-400' : 'text-green-400'
+                  remainingTime <= 60 ? 'text-yellow-400' : 'text-emerald-400'
                 }`}>
                   {formatTime(remainingTime)}
                 </div>
@@ -611,7 +611,7 @@ export default function LanguageLearningApp() {
                   <div 
                     className={`h-2 rounded-full transition-all duration-1000 ${
                       remainingTime <= 30 ? 'bg-red-500' : 
-                      remainingTime <= 60 ? 'bg-yellow-500' : 'bg-green-500'
+                      remainingTime <= 60 ? 'bg-yellow-500' : 'bg-emerald-500'
                     }`}
                     style={{ width: `${(remainingTime / 180) * 100}%` }}
                   ></div>
@@ -622,7 +622,7 @@ export default function LanguageLearningApp() {
             {/* Session Stats */}
             <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl border border-gray-700/50 p-6 shadow-xl">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <TrendingUp className="w-6 h-6 text-purple-400" />
+                <TrendingUp className="w-6 h-6 text-emerald-400" />
                 Session Stats
               </h3>
               <div className="space-y-4">
@@ -632,13 +632,13 @@ export default function LanguageLearningApp() {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-300">Progress</span>
-                  <span className="font-bold text-purple-400 text-lg">{Math.round(progress)}%</span>
+                  <span className="font-bold text-emerald-400 text-lg">{Math.round(progress)}%</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-300">Status</span>
                   <div className="flex items-center gap-2">
-                    <div className={`w-3 h-3 rounded-full ${isConnected ? 'bg-green-400' : 'bg-red-400'} animate-pulse`}></div>
-                    <span className={`font-semibold ${isConnected ? 'text-green-400' : 'text-red-400'}`}>
+                    <div className={`w-3 h-3 rounded-full ${isConnected ? 'bg-emerald-400' : 'bg-red-400'} animate-pulse`}></div>
+                    <span className={`font-semibold ${isConnected ? 'text-emerald-400' : 'text-red-400'}`}>
                       {isConnected ? 'Connected' : 'Disconnected'}
                     </span>
                   </div>
@@ -661,7 +661,7 @@ export default function LanguageLearningApp() {
                   'Make the most of your 3 minutes!'
                 ].map((tip, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full mt-2 flex-shrink-0"></div>
                     <span>{tip}</span>
                   </div>
                 ))}
@@ -671,7 +671,7 @@ export default function LanguageLearningApp() {
             {/* Languages */}
             <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl border border-gray-700/50 p-6 shadow-xl">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Globe className="w-6 h-6 text-violet-400" />
+                <Globe className="w-6 h-6 text-green-400" />
                 Languages
               </h3>
               <div className="space-y-4">
@@ -684,7 +684,7 @@ export default function LanguageLearningApp() {
                 </div>
                 <div>
                   <span className="text-sm text-gray-400">Learning</span>
-                  <div className="flex items-center gap-3 mt-2 p-3 bg-gradient-to-r from-purple-900/40 to-violet-900/40 rounded-xl border border-purple-500/30">
+                  <div className="flex items-center gap-3 mt-2 p-3 bg-gradient-to-r from-emerald-900/40 to-green-900/40 rounded-xl border border-emerald-500/30">
                     <span className="text-2xl">{languages.find(l => l.code === targetLanguage)?.flag}</span>
                     <span className="font-semibold text-white">{languages.find(l => l.code === targetLanguage)?.name}</span>
                   </div>
