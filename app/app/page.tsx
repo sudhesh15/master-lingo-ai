@@ -244,7 +244,7 @@ export default function LanguageLearningApp() {
   // Setup Phase - Green Theme
   if (sessionState === 'setup') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-emerald-900">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-emerald-900 overflow-x-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full opacity-20 animate-pulse"></div>
@@ -260,7 +260,7 @@ export default function LanguageLearningApp() {
         {/* Header with User Info */}
         <div className="relative z-10 bg-gray-900/90 backdrop-blur-md border-b border-gray-700/50">
           <div className="max-w-7xl mx-auto px-6 py-4">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between flex-wrap">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 bg-gradient-to-r from-emerald-600 to-green-600 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30">
                   <Languages className="w-6 h-6 text-white" />
@@ -377,13 +377,11 @@ export default function LanguageLearningApp() {
               <button
                 onClick={handleStartLearning}
                 disabled={!currentLanguage || !targetLanguage}
-                className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 disabled:from-gray-600 disabled:to-gray-700 text-white font-bold py-6 px-12 rounded-2xl transition-all duration-300 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed shadow-2xl shadow-emerald-500/30 text-xl min-w-[300px]"
+                className="group relative inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-600 text-white font-bold py-6 px-12 rounded-2xl transition-all duration-300 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed shadow-2xl shadow-emerald-500/30 disabled:shadow-none text-xl min-w-[300px] focus:outline-none"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-2xl blur opacity-40 group-hover:opacity-60 transition-opacity"></div>
                 <div className="relative flex items-center gap-3">
                   <Play className="w-7 h-7" />
                   Begin Your Journey
-                  <div className="ml-2 w-2 h-2 bg-white rounded-full animate-ping"></div>
                 </div>
               </button>
             </div>
