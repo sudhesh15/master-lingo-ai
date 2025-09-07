@@ -186,7 +186,7 @@ export default function LandingPage() {
                 </div>
                 <Quote className="w-8 h-8 text-emerald-400 mb-4 opacity-60" />
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  "The AI conversations feel so natural! I've improved my Spanish pronunciation more in 2 weeks than I did in months with traditional apps."
+                  "The AI conversations feel so natural! I&apos;ve improved my Spanish pronunciation more in 2 weeks than I did in months with traditional apps."
                 </p>
                 <span className="text-emerald-400 text-sm font-semibold">Learning Spanish</span>
               </div>
@@ -208,7 +208,7 @@ export default function LandingPage() {
                 </div>
                 <Quote className="w-8 h-8 text-green-400 mb-4 opacity-60" />
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  "Finally, a language app that understands my learning style. The adaptive AI adjusts to my pace perfectly. Highly recommended!"
+                  &quot;Finally, a language app that understands my learning style. The adaptive AI adjusts to my pace perfectly. Highly recommended!&quot;
                 </p>
                 <span className="text-green-400 text-sm font-semibold">Learning French</span>
               </div>
@@ -230,7 +230,7 @@ export default function LandingPage() {
                 </div>
                 <Quote className="w-8 h-8 text-teal-400 mb-4 opacity-60" />
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  "The real-time feedback is incredible. I can actually feel my confidence growing with each conversation. This is the future of language learning!"
+                 &quot;The real-time feedback is incredible. I can actually feel my confidence growing with each conversation. This is the future of language learning!&quot;
                 </p>
                 <span className="text-teal-400 text-sm font-semibold">Learning German</span>
               </div>
